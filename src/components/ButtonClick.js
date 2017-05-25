@@ -5,19 +5,28 @@ import {
   Alert,
   View
 } from 'react-native';
-export default class ButtonClick extends Component {
+import Toolbar from './toolbar'
 
-   onButtonPress() {
-  Alert.alert('Button has been pressed!');
-};
+export default class ButtonClick extends Component {
+  static navigationOptions = {
+    title: 'Button Click'
+  };
+//    onButtonPress() {
+//   Alert.alert('Button has been pressed!');
+// };
 
  render() {
+   const { navigate } = this.props.navigation;
+
       return (
+        <View>
         <Button
-         onPress={() => this.onButtonPress()}
-          title="Press Me"
-          accessibilityLabel="See an informative alert"
+         onPress={() => navigate('Another')}
+        title="Press Me"
+        accessibilityLabel="See an informative alert"
         />
+        </View>
+
       );
     }
   }

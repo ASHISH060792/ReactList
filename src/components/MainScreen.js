@@ -15,6 +15,8 @@ import Another from './Another';
 import LoadWebView from './LoadWebView';
 import ShowViewPagerAndroid from './ShowViewPagerAndroid';
 import RadioButton from './RadioButton';
+import NavigationDrawerAndroid from './NavigationDrawerAndroid';
+
 
 
 
@@ -53,6 +55,10 @@ class MainScreen extends React.Component {
           <Button
             onPress={() => navigate('RadioButton')}
             title="Radio Button"/> 
+          <Text style={styles.title}>Navigation Drawer Android</Text>
+          <Button
+            onPress={() => navigate('NavigationDrawerAndroid')}
+            title="Navigation Drawer Android"/> 
         </ScrollView>
       </View>
     );
@@ -68,6 +74,7 @@ const SimpleApp = StackNavigator({
   LoadWebView:{screen: LoadWebView},
   ShowViewPagerAndroid:{screen: ShowViewPagerAndroid},
   RadioButton:{screen: RadioButton},
+  NavigationDrawerAndroid:{screen: NavigationDrawerAndroid}
 
 
 

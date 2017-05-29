@@ -7,9 +7,9 @@ import {
 } from 'react-native';
 import Toolbar from './toolbar'
 
-export default class ButtonClick extends Component {
+export default class NestedNavigation extends Component {
   static navigationOptions = {
-    title: 'Button Click'
+    title: 'Nested Navigation'
   };
 //    onButtonPress() {
 //   Alert.alert('Button has been pressed!');
@@ -21,7 +21,7 @@ export default class ButtonClick extends Component {
       return (
         <View>
         <Button
-         onPress={() => navigate('Another')}
+        onPress={() => navigate('Another')}
         title="Press Me"
         accessibilityLabel="See an informative alert"
         />

@@ -4,13 +4,16 @@ import {
   Text,
   View,
   Button,
+  ScrollView,
   StyleSheet
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import ListView from './ListView';
-import ScrollView from './ScrollView';
-import ButtonClick from './ButtonClick';
+import ScrollViewWithImageAndText from './ScrollViewWithImageAndText';
+import NestedNavigation from './NestedNavigation';
 import Another from './Another';
+import LoadWebView from './LoadWebView';
+import ShowViewPagerAndroid from './ShowViewPagerAndroid';
 import RadioButton from './RadioButton';
 
 
@@ -24,27 +27,33 @@ class MainScreen extends React.Component {
 
     return (
       <View style={styles.container}>
-      <Text style={styles.title}>List View </Text>
-        <Button
-         onPress={() => navigate('ListView')}
-         title="ListView"/>
-         <Text style={styles.title}>Button Click </Text>
 
-        <Button
-          onPress={() => navigate('ButtonClick')}
-          title="ButtonClick"/>
-
-        <Text style={styles.title}>Scroll View </Text>
-
-        <Button
-           onPress={() => navigate('ScrollView')}
-           title="ScrollView"/>
-
-        <Text style={styles.title}>Radio Button </Text>
-
-        <Button
-              onPress={() => navigate('RadioButton')}
-              title="RadioButton"/>
+        <ScrollView>
+          <Text style={styles.title}>List View </Text>
+          <Button
+            onPress={() => navigate('ListView')}
+            title="List View With API"/>
+          <Text style={styles.title}>Nested Navigation </Text>
+          <Button
+            onPress={() => navigate('NestedNavigation')}
+            title="Nested Navigation"/>
+          <Text style={styles.title}>Scroll View </Text>
+          <Button
+            onPress={() => navigate('ScrollViewWithImageAndText')}
+            title="Scroll View"/>
+          <Text style={styles.title}>Load Web View </Text>
+          <Button
+            onPress={() => navigate('LoadWebView')}
+            title="Web View"/>
+          <Text style={styles.title}>Show ViewPager Android </Text>
+          <Button
+            onPress={() => navigate('ShowViewPagerAndroid')}
+            title="View Pager"/>
+          <Text style={styles.title}>Radio Button</Text>
+          <Button
+            onPress={() => navigate('RadioButton')}
+            title="Radio Button"/> 
+        </ScrollView>
       </View>
     );
   }
@@ -53,10 +62,14 @@ class MainScreen extends React.Component {
 const SimpleApp = StackNavigator({
   Home: { screen: MainScreen },
   ListView:{screen: ListView},
-  ButtonClick:{screen: ButtonClick},
-  ScrollView:{screen: ScrollView},
+  NestedNavigation:{screen: NestedNavigation},
+  ScrollViewWithImageAndText:{screen: ScrollViewWithImageAndText},
   Another:{screen: Another},
+  LoadWebView:{screen: LoadWebView},
+  ShowViewPagerAndroid:{screen: ShowViewPagerAndroid},
   RadioButton:{screen: RadioButton},
+
+
 
 });
 

@@ -30,8 +30,7 @@ export default class App extends Component{
         return(
             <View style={styles.container}>
                 <RadioGroup
-                    onSelect = {(index, value) => this.onSelect(index, value)}
-                >
+                    onSelect = {(index, value) => this.onSelect(index, value)}>
                     <RadioButton value={'item1'} >
                         <Text>This is item #1</Text>
                     </RadioButton>

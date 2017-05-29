@@ -11,10 +11,8 @@
 		"react-native": "0.44.0",
 		 "react-navigation": "^1.0.0-beta.11",
 		 "react-native-animatable": "^0.6.1",
-		 "react-native-flexi-radio-button": "^0.1.4"
-
-
-
+		 "react-native-flexi-radio-button": "^0.1.4",
+		 "base-64": "^0.1.0"
 	},
 	"devDependencies": {
 		"babel-jest": "20.0.3",

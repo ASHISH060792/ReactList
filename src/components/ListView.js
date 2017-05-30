@@ -7,9 +7,12 @@ import {
   ListView,
   ToolbarAndroid,
   ScrollView,
+  ActivityIndicator,
   View
 } from 'react-native';
 import Toolbar from './toolbar'
+import styles from './Styles';
+
 var REQUEST_URL = 'https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json';
 
 //Create Component
@@ -25,6 +28,7 @@ export default class ReactList extends Component {
         rowHasChanged: (row1, row2) => row1 !== row2,
       }),
       loaded: false,
+      animating:true,
     };
   }
 
@@ -77,10 +81,15 @@ export default class ReactList extends Component {
 //Render Loading Movies View
   renderLoadingView() {
     return (
-      <View style={styles.container}>
+      <View style={styles.centering}>
         <Text>
           Loading movies...
         </Text>
+        <ActivityIndicator
+        animating={this.state.animating}
+        style={[styles.centering, {height: 80}]}
+        size="large"
+      />
       </View>
     );
   }
@@ -100,42 +109,3 @@ export default class ReactList extends Component {
   }
 }
 
-//Styling
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#FFFFFF',
-  },
-   rightContainer: {
-    flex: 1,
-  },
-   toolbar: {
-        height: 56,
-        backgroundColor: '#56857B',
-    },
-
-   thumbnail: {
-    height: 50,
-    borderRadius:25,
-    width: 50
-  },
-
-   title: {
-    fontSize: 16,
-    marginBottom: 8,
-    marginTop: 6,
-    alignItems: 'center',
-    textAlign: 'left',
-    color:"#000",
-    padding:10,
-  },
-
- separator: {
-    flex: 1,
-    height: StyleSheet.hairlineWidth,
-    backgroundColor: '#8E8E8E',
-  },
-
-});

@@ -16,9 +16,8 @@ import LoadWebView from './LoadWebView';
 import ShowViewPagerAndroid from './ShowViewPagerAndroid';
 import RadioButton from './RadioButton';
 import NavigationDrawerAndroid from './NavigationDrawerAndroid';
-
-
-
+import ActivityIndicatorComponent from './ActivityIndicatorComponent';
+import styles from './Styles';
 
 class MainScreen extends React.Component {
   static navigationOptions = {
@@ -29,7 +28,6 @@ class MainScreen extends React.Component {
 
     return (
       <View style={styles.container}>
-
         <ScrollView>
           <Text style={styles.title}>List View </Text>
           <Button
@@ -58,7 +56,11 @@ class MainScreen extends React.Component {
           <Text style={styles.title}>Navigation Drawer Android</Text>
           <Button
             onPress={() => navigate('NavigationDrawerAndroid')}
-            title="Navigation Drawer Android"/> 
+            title="Navigation Drawer Android"/>  
+          <Text style={styles.title}>Activity Indicator </Text>
+          <Button
+            onPress={() => navigate('ActivityIndicatorComponent')}
+            title="Activity Indicator"/>  
         </ScrollView>
       </View>
     );
@@ -74,30 +76,8 @@ const SimpleApp = StackNavigator({
   LoadWebView:{screen: LoadWebView},
   ShowViewPagerAndroid:{screen: ShowViewPagerAndroid},
   RadioButton:{screen: RadioButton},
-  NavigationDrawerAndroid:{screen: NavigationDrawerAndroid}
-
-
-
-});
-
-//Styling
-const styles = StyleSheet.create({
-  container:{
-    flex: 1,
-    flexDirection: 'column',
-  },
-   title: {
-    fontSize: 16,
-    marginBottom: 8,
-    marginTop: 6,
-    alignItems: 'center',
-    textAlign: 'left',
-    color:"#000",
-    padding:10,
-  },
-
+  NavigationDrawerAndroid:{screen: NavigationDrawerAndroid},
+  ActivityIndicatorComponent:{screen: ActivityIndicatorComponent},
 
 });
-
-
 AppRegistry.registerComponent('ReactList', () => SimpleApp);
